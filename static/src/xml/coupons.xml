@@ -4,7 +4,7 @@
     <t t-name="VoucherWidget">
         <div class='control-button' style="width: 70%;margin-top: 5px;margin-bottom: -5px;">
             <div class="coupons">
-                <i class='fa fa-star' /> Cupones y Descuentos
+                <i class='fa fa-star' /> Coupons
             </div>
         </div>
     </t>
@@ -13,16 +13,17 @@
             <div class="popup popup-text">
                 <p class="title"><t t-esc=" widget.options.title || '' " /></p>
                 <input class="coupon_code" type='text' t-att-value="widget.options.value || ''"></input>
-                <button class="validate_coupon">Verifica</button>
+                <button class="validate_coupon">Verify</button>
                 <div class="coupon_status">
                     <p class="coupon_status_p"></p>
                 </div>
                 <div class="footer">
                     <div class="button confirm-coupon" style="display:none;">
-                        Aplicar
+                        Apply
                     </div>
                     <div class="button cancel">
-                        Cancelar
+                        Cancel
+                    </div>
                 </div>
             </div>
         </div>

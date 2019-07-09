@@ -24,7 +24,7 @@
     'version': '12.0.1.0.0',
     'category': 'Point of Sale',
     'summary': 'Manage Point of Sale Vouchers & Coupon Codes',
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Cybrosys Techno Solutions , Gabriel Pabon',
     'website': "https://www.cybrosys.com",
     'company': 'Cybrosys Techno Solutions',
     'depends': ['point_of_sale'],
