@@ -2,7 +2,7 @@
 <odoo>
     <data>
         <record id="gift_voucher_pos_form" model="ir.ui.view">
-            <field name="name">Gift Voucher</field>
+            <field name="name">Vouchers</field>
             <field name="model">gift.voucher.pos</field>
             <field name="arch" type="xml">
                <form>
@@ -28,7 +28,7 @@
         </record>
 
         <record id="gift_voucher_pos_tree" model="ir.ui.view">
-            <field name="name">Gift Voucher</field>
+            <field name="name">Vouchers</field>
             <field name="model">gift.voucher.pos</field>
             <field name="arch" type="xml">
                <tree>
@@ -42,7 +42,7 @@
         </record>
 
         <record id="gift_coupon_pos_form" model="ir.ui.view">
-            <field name="name">Gift Coupon</field>
+            <field name="name">Cupones</field>
             <field name="model">gift.coupon.pos</field>
             <field name="arch" type="xml">
                <form>
@@ -63,7 +63,7 @@
                                <field name="end_date" />
                            </group>
                        </group>
-                       <group string="Conditions">
+                       <group string="Condiciones">
                            <group>
                                <field name="total_avail" />
                            </group>
@@ -72,7 +72,7 @@
                                <field name="limit" />
                            </group>
                        </group>
-                       <group string="Pricing">
+                       <group string="Precio">
                            <group>
                                <field name="voucher_val" />
                            </group>
@@ -86,7 +86,7 @@
         </record>
 
         <record id="gift_coupon_pos_tree" model="ir.ui.view">
-            <field name="name">Gift Coupon</field>
+            <field name="name">Cupones</field>
             <field name="model">gift.coupon.pos</field>
             <field name="arch" type="xml">
                <tree>
@@ -103,7 +103,7 @@
         </record>
 
         <record id="action_gift_voucher_pos" model="ir.actions.act_window">
-            <field name="name">Gift Vouchers</field>
+            <field name="name">Vouchers</field>
             <field name="res_model">gift.voucher.pos</field>
             <field name="type">ir.actions.act_window</field>
             <field name="view_type">form</field>
@@ -112,7 +112,7 @@
         </record>
 
         <record id="action_gift_coupon_pos" model="ir.actions.act_window">
-            <field name="name">Generate Gift Coupons</field>
+            <field name="name">Generar cupones</field>
             <field name="res_model">gift.coupon.pos</field>
             <field name="type">ir.actions.act_window</field>
             <field name="view_type">form</field>
@@ -120,9 +120,9 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem name="Vouchers and Coupons" id="gift_coupon_main" sequence="99"
+        <menuitem name="Cupones y Descuentos" id="gift_coupon_main" sequence="99"
                   parent="point_of_sale.menu_point_root"/>
-        <menuitem name="Gift Voucher" id="gift_voucher" action="action_gift_voucher_pos" parent="gift_coupon_main"/>
-        <menuitem name="Gift Coupon" id="gift_coupon" action="action_gift_coupon_pos" parent="gift_coupon_main"/>
+        <menuitem name="Vauchers" id="gift_voucher" action="action_gift_voucher_pos" parent="gift_coupon_main"/>
+        <menuitem name="Cupones" id="gift_coupon" action="action_gift_coupon_pos" parent="gift_coupon_main"/>
     </data>
 </odoo>
