@@ -120,9 +120,9 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem name="Vouchers and Coupons" id="gift_coupon_main" sequence="99"
+        <menuitem name="Promociones" id="gift_coupon_main" sequence="99"
                   parent="point_of_sale.menu_point_root"/>
-        <menuitem name="Gift Voucher" id="gift_voucher" action="action_gift_voucher_pos" parent="gift_coupon_main"/>
-        <menuitem name="Gift Coupon" id="gift_coupon" action="action_gift_coupon_pos" parent="gift_coupon_main"/>
+        <menuitem name="Descuentos" id="gift_voucher" action="action_gift_voucher_pos" parent="gift_coupon_main"/>
+        <menuitem name="Cupones" id="gift_coupon" action="action_gift_coupon_pos" parent="gift_coupon_main"/>
     </data>
 </odoo>
