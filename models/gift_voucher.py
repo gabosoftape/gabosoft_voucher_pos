@@ -28,7 +28,7 @@ from odoo.exceptions import UserError
 class GiftVoucherPos(models.Model):
     _name = 'gift.voucher.pos'
 
-    name = fields.Char(string="Name", required=True)
+    name = fields.Char(string="Nombre Promocion", required=True)
     voucher_type = fields.Selection(
         selection=[
             ('product', 'Product'),
@@ -36,11 +36,11 @@ class GiftVoucherPos(models.Model):
             ('all', 'All Products'),
         ], string="Applicable on ", default='product'
     )
-    product_id = fields.Many2one('product.product', string="Product")
-    product_categ = fields.Many2one('pos.category', string="Product Category")
-    min_value = fields.Integer(string="Minimum Voucher Value", required=True)
-    max_value = fields.Integer(string="Maximum Voucher Value", required=True)
-    expiry_date = fields.Date(string="Expiry Date", required=True, help='The expiry date of Voucher.')
+    product_id = fields.Many2one('product.product', string="Producto")
+    product_categ = fields.Many2one('pos.category', string="Categoria Producto")
+    min_value = fields.Integer(string="Valor Minimo Promocion", required=True)
+    max_value = fields.Integer(string="Valor Maximo Promocion", required=True)
+    expiry_date = fields.Date(string="Fecha Limite", required=True, help='Fecha de expiracion Promocion.')
 
 
 class GiftCouponPos(models.Model):
@@ -55,25 +55,25 @@ class GiftCouponPos(models.Model):
         ('name_uniq', 'unique (code)', "Code already exists !"),
     ]
 
-    name = fields.Char(string="Name", required=True)
-    code = fields.Char(string="Code", default=get_code)
-    voucher = fields.Many2one('gift.voucher.pos', string="Voucher", required=True)
-    start_date = fields.Date(string="Start Date")
-    end_date = fields.Date(string="End Date")
-    partner_id = fields.Many2one('res.partner', string="Limit to a Single Partner", help='Limit to a Single Partner')
-    limit = fields.Integer(string="Total Available For Each User", default=1, help='Total Available For Each User')
+    name = fields.Char(string="Nombre", required=True)
+    code = fields.Char(string="Codigo", default=get_code)
+    voucher = fields.Many2one('gift.voucher.pos', string="Promocion", required=True)
+    start_date = fields.Date(string="Fecha de Inicio")
+    end_date = fields.Date(string="Fecha Fin")
+    partner_id = fields.Many2one('res.partner', string="Limitar a un solo socio", help='Limitar a un solo socio.')
+    limit = fields.Integer(string="Total disponible para cada usuario", default=1, help='Total disponible para cada usuario.')
     total_avail = fields.Integer(string="Total Available", default=1)
 
-    voucher_val = fields.Float(string="Voucher Value", help='The amount for the voucher.')
+    voucher_val = fields.Float(string="Valor Promocion", help='El importe de la promoción..')
     type = fields.Selection([
-        ('fixed', 'Fixed Amount'),
-        ('percentage', 'Percentage'),
+        ('fixed', 'Cantidad Fija'),
+        ('percentage', 'Porcentaje'),
         ], store=True, default='fixed')
 
     @api.onchange('voucher_val')
     def check_val(self):
         if self.voucher_val > self.voucher.max_value or self.voucher_val < self.voucher.min_value:
-            raise UserError(_("Please check the voucher value"))
+            raise UserError(_("Por favor, compruebe el valor del vale."))
 
 
 class CouponPartnerPos(models.Model):
@@ -81,7 +81,7 @@ class CouponPartnerPos(models.Model):
 
     partner_id = fields.Many2one('res.partner', string="Cliente")
     coupon_pos = fields.Char(string="Cupon")
-    number_pos = fields.Integer(string="Numero de veces Usada.")
+    number_pos = fields.Integer(string="Numero de veces Usado.")
 
     def update_history(self, vals):
         if vals:
@@ -105,4 +105,4 @@ class CouponPartnerPos(models.Model):
 class PartnerExtendedPos(models.Model):
     _inherit = 'res.partner'
 
-    applied_coupon_pos = fields.One2many('partner.coupon.pos', 'partner_id', string="Coupons Applied From POS")
+    applied_coupon_pos = fields.One2many('partner.coupon.pos', 'partner_id', string="Cupones aplicados desde POS.")
