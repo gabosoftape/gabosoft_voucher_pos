@@ -357,7 +357,7 @@ odoo.define("vouchers_pos.coupons", function (require) {
                         var category = {};
                         console.log(lines);
                         for (var p in lines){
-                            if(lines[p].product.pos_categ_id){
+                            if(lines[p].product.categ_id){
                                 category[lines[p].product.pos_categ_id[0]] = null;
                             }
                         }
