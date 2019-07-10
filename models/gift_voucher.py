@@ -79,9 +79,9 @@ class GiftCouponPos(models.Model):
 class CouponPartnerPos(models.Model):
     _name = 'partner.coupon.pos'
 
-    partner_id = fields.Many2one('res.partner', string="Partner")
-    coupon_pos = fields.Char(string="Coupon Applied")
-    number_pos = fields.Integer(string="Number of Times Used")
+    partner_id = fields.Many2one('res.partner', string="Cliente")
+    coupon_pos = fields.Char(string="Cupon")
+    number_pos = fields.Integer(string="Numero de veces Usada.")
 
     def update_history(self, vals):
         if vals:
