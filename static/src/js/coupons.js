@@ -338,6 +338,7 @@ odoo.define("vouchers_pos.coupons", function (require) {
             if(voucher){
                 switch(voucher.voucher_type){
                     case 'product': {
+                        console.log('se selecciono producto '+voucher.voucher_type);
                         var lines = order.orderlines.models;
                         var products = {};
                         for (var p in lines){
@@ -351,11 +352,12 @@ odoo.define("vouchers_pos.coupons", function (require) {
                         break;
                     }
                     case 'category':{
+                        console.log('se selecciono Categoria '+voucher.voucher_type);
                         var lines = order.orderlines.models;
                         var category = {};
                         for (var p in lines){
-                            if(lines[p].product.category){
-                                category[lines[p].product.category[0]] = null;
+                            if(lines[p].product.pos_categ_id){
+                                category[lines[p].product.pos_categ_id[0]] = null;
                             }
                         }
                         if(voucher.product_categ[0] in category){
