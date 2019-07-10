@@ -41,7 +41,7 @@
             <field name="view_mode">tree</field>
         </record>
 
-        <menuitem name="Coupon History" id="gift_coupon_history_pos" action="action_gift_coupon_history_pos"
+        <menuitem name="Historial de Cupones" id="gift_coupon_history_pos" action="action_gift_coupon_history_pos"
                   parent="vouchers_pos.gift_coupon_main"/>
     </data>
 </odoo>
