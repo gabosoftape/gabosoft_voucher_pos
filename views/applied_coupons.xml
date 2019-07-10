@@ -7,7 +7,7 @@
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//page[@name='sales_purchases']" position="after">
-                    <page name="coupon_applied" string="Applied Coupons">
+                    <page name="coupon_applied" string="Cupones Usados">
                         <field name="applied_coupon_pos" readonly="1">
                             <tree>
                                 <field name="partner_id" invisible="1"/>
@@ -21,7 +21,7 @@
 		</record>
 
         <record id="gift_coupon_history_pos_tree" model="ir.ui.view">
-            <field name="name">Gift Coupon History</field>
+            <field name="name">Historial de cupones</field>
             <field name="model">partner.coupon.pos</field>
             <field name="arch" type="xml">
                <tree>
@@ -33,7 +33,7 @@
         </record>
 
         <record id="action_gift_coupon_history_pos" model="ir.actions.act_window">
-            <field name="name">Gift Coupons History</field>
+            <field name="name">Historial de cupones</field>
             <field name="res_model">partner.coupon.pos</field>
             <field name="type">ir.actions.act_window</field>
             <field name="view_type">form</field>
