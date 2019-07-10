@@ -62,7 +62,7 @@ class GiftCouponPos(models.Model):
     end_date = fields.Date(string="Fecha Fin")
     partner_id = fields.Many2one('res.partner', string="Limitar a un solo socio", help='Limitar a un solo socio.')
     limit = fields.Integer(string="Total disponible para cada usuario", default=1, help='Total disponible para cada usuario.')
-    total_avail = fields.Integer(string="Total Available", default=1)
+    total_avail = fields.Integer(string="Total Disponible", default=1)
 
     voucher_val = fields.Float(string="Valor Promocion", help='El importe de la promoción..')
     type = fields.Selection([
